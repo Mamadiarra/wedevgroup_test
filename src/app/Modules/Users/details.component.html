@@ -1,0 +1,12 @@
+<style>
+    agm-map {
+  height: 300px;
+}
+</style>
+
+<div *ngFor="let Users of ListUsersDetails">
+  <h2 style="text-align:center;color:#ee6e73;font-weight:300;">La position de {{Users.Nom}}</h2> 
+<agm-map [latitude]="Users.lat" [longitude]="Users.lng">
+<agm-marker [latitude]="Users.lat" [longitude]="Users.lng"></agm-marker>
+</agm-map>
+    </div>

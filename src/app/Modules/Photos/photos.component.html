@@ -1,0 +1,33 @@
+<div>
+<h2 style="text-align:center;color: #ee6e73;font-weight: 300;">Liste des photos ({{ListPhotos.length}})</h2>
+<!--<table border="1">
+    <tr>
+        <td>N°</td>
+        <td>Titre</td>
+        <td>Taille réelle</td>
+        <td>Taille reduite</td>
+    </tr>
+        <tr *ngFor="let photos of ListPhotos">
+        <td>{{photos.id}}</td>
+        <td>{{photos.title}}</td>
+        <td><img [src]="photos.url" /></td>
+        <td><img [src]="photos.thumbnailUrl" /></td>
+    </tr>
+ 
+</table>-->
+
+
+ <div class="row">
+    <div class="col s12 m4" *ngFor="let photos of ListPhotos">
+      <div class="card">
+        <div class="card-image">
+          <img [src]="photos.url">
+          <span class="card-title">Taille reduite</span>
+          <a class="btn-floating halfway-fab waves-effect waves-light red" style="width: 150px;height: 150px;"><img [src]="photos.thumbnailUrl" /></a>
+        </div>
+        <div class="card-content" style="height:100px;">
+          <p>{{photos.title}}</p>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,45 @@
+<div>
+<h2 style="text-align:center;">Liste des utilisateurs </h2>
+<table class="striped" style="box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12); padding:10px;width:95%;margin:auto;">
+     <thead>
+    <tr>
+        <th>N°</th>
+        <th>Nom</th>
+        <th>Pseudo</th>
+        <th>Email</th>
+        <th>Adresse </th>
+        <th>Telephone </th>
+        <th>Site Internet </th>
+        <th>Entreprise </th>
+        <th>Action</th>
+    </tr>
+     </thead>
+    <tbody>
+    <tr *ngFor="let users of ListUsers">
+        <td>{{users.id}}</td>
+        <td>{{users.name}}</td>
+        <td>{{users.username}}</td>
+        <td>{{users.email}}</td>
+        <td>
+           <p><span style="font-weight:bold;">Rue : </span>{{users.address.street}}</p>
+           <p><span style="font-weight:bold;">Suite : </span>{{users.address.suite}}</p>
+           <p><span style="font-weight:bold;">Cité : </span>{{users.address.city}}</p>
+           <p><span style="font-weight:bold;">Code zip : </span>{{users.address.zipcode}}</p> 
+        </td>
+        <td>{{users.phone}}</td>
+        <td>{{users.website}}</td>
+        <td>
+           <p><span style="font-weight:bold;">Nom : </span>{{users.company.name}}</p>
+           <p><span style="font-weight:bold;">BatchPhrase : </span>{{users.company.catchPhrase}}</p>
+           <p><span style="font-weight:bold;">Bs : </span>{{users.company.bs}}</p>
+        </td>
+        <td>
+<button class="btn waves-effect waves-light" type="submit" name="action" [routerLink] = "['/DetailUsers',users.id]" style="width: 215px;">Position
+    <i class="material-icons right">send</i>
+    
+  </button>        
+
+        </td>
+    </tr>
+    </tbody>
+</table>
